@@ -1,0 +1,70 @@
+
+
+/*---genaral css start---*/
+*{
+	margin: 0;
+	padding: 0;
+	
+
+}
+img{
+	width: 100%;
+	height:100%;
+}
+/*---genaral css end---*/
+.about{
+	padding: 60px 0;
+	
+	background: #e9f2fa;
+}
+.about h1{
+	text-align: center;
+	font-size: 40px;
+	font-weight: 550;
+	margin-bottom:20px ;
+}
+.about h6{
+	text-align: center;
+	margin-bottom:40px ;
+}
+.box{
+	margin: 5px 0;
+	padding: 0 5px;
+}
+.main{
+	padding: 5px;
+}
+.row{
+	margin: 0;
+	padding: 0;
+}
+.about-box{
+	text-align: center;
+	flex-flow: wrap;
+	text-align: center;
+	background: #fff;
+	height: 100%;
+	width: 100%;
+	padding: 20px 10px;
+}
+.about-box i{
+	color: #a3c4e4;
+	padding: 20px 0;
+}
+
+/* ------media---- */
+@media(max-width: 576px){
+	.main{
+		min-height: 320px;
+	}
+	.box{
+		min-height: 248px;
+	}
+	.box img{
+		height: 248px;
+	}
+	.about h1{
+	font-size: 30px;
+}
+	
+}

@@ -1,0 +1,50 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#offer-section{
+	background: url('../../../images//banner/offer.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+}
+.offer-section{
+	height: 100vh;
+	position: relative;
+}
+.offer-section div{
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-40%);
+	max-width: 600px;
+	text-align: right;
+	color: #fff;
+	font-size: 20px;
+}
+.offer-section div h1{
+	font-size: 50px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+.offer-section div p{
+	line-height: 35px;
+}
+.offer-button{
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+	font-weight: 550;
+	margin-top: 20px;
+	padding: 8px 20px;
+	border: 3px solid #fff;
+
+}
+
+/* ----media------ */
+@media(max-width: 576px){
+	.offer-section div h1{
+		font-size: 35px;
+	}
+	
+}

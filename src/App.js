@@ -1,23 +1,51 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Home from './Pages/Home/Home/Home/Home';
+import Header from './Pages/Header/Header';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import Details from './Pages/Details/Details/Details';
+import Login from './Pages/Login/Login/Login';
+import Notfound from './Pages/NotFound/NotFound';
+import AuthProvider from './Context/AuthProvider';
+import MyBooking from './Pages/Home/MyBooking/MyBooking';
+import AddService from './Pages/Home/AddService/AddService';
+import ManageAllBooking from './Pages/Home/ManageAllBooking/ManageAllBooking';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+        <BrowserRouter>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <Route path="/manageAllBooking">
+              <ManageAllBooking></ManageAllBooking>
+            </Route>
+            <Route path="/myBooking">
+              <MyBooking></MyBooking>
+            </Route>
+            <Route path="/addService">
+              <AddService></AddService>
+            </Route>
+            <PrivateRoute path="/details/:serviceId">
+              <Details></Details>
+            </PrivateRoute>
+            <Route path="*">
+              <Notfound></Notfound>
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
