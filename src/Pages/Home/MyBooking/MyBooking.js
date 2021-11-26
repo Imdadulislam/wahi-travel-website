@@ -5,7 +5,6 @@ import Footer from '../../Footer/Footer';
 const MyBooking = () => {
     const { user } = useAuth();
     const [bookings, setBookings] = useState([]);
-    const [change, setChange] = useState(false)
     useEffect(() => {
         fetch(`https://infinite-savannah-05869.herokuapp.com/booking/${user.email}`)
             .then(res => res.json())

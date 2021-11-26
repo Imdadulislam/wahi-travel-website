@@ -15,7 +15,7 @@ const Details = () => {
         fetch(`https://infinite-savannah-05869.herokuapp.com/services/${serviceId}`)
             .then(res => res.json())
             .then(data => setPlace(data))
-    }, []);
+    }, [place]);
     const onSubmit = data => {
         data.status = "Pending";
         fetch('https://infinite-savannah-05869.herokuapp.com/booking', {
