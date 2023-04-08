@@ -13,14 +13,14 @@ const ManageAllBooking = () => {
 
 
     useEffect(() => {
-        fetch('https://infinite-savannah-05869.herokuapp.com/booking')
+        fetch('https://wahi-travel-server.onrender.com/booking')
             .then(res => res.json())
             .then(data => setTourists(data))
     }, []);
 
 
     const handleUpdate = id => {
-        fetch(`https://infinite-savannah-05869.herokuapp.com/updateStatus/${id}`, {
+        fetch(`https://wahi-travel-server.onrender.com/updateStatus/${id}`, {
             method: 'PUT',
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
@@ -40,7 +40,7 @@ const ManageAllBooking = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure want to cancel Booking?');
         if (proceed) {
-            fetch(`https://infinite-savannah-05869.herokuapp.com/cancelBooking/${id}`, {
+            fetch(`https://wahi-travel-server.onrender.com/cancelBooking/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())

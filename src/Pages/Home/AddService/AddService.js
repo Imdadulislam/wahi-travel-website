@@ -4,9 +4,9 @@ import Footer from '../../Footer/Footer';
 import './AddService.css';
 
 const AddService = () => {
-    const { register, handleSubmit,reset } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        fetch('https://infinite-savannah-05869.herokuapp.com/services', {
+        fetch('https://wahi-travel-server.onrender.com/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -30,7 +30,7 @@ const AddService = () => {
                 <input {...register("price")} placeholder="Price" />
                 <textarea {...register("description")} placeholder="description" />
                 <input {...register("image")} placeholder="Image URL" />
-                <input  type="submit" className="Add-button"/>
+                <input type="submit" className="Add-button" />
             </form>
             <Footer></Footer>
         </div>

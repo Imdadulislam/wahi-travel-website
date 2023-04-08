@@ -6,7 +6,7 @@ const MyBooking = () => {
     const { user } = useAuth();
     const [bookings, setBookings] = useState([]);
     useEffect(() => {
-        fetch(`https://infinite-savannah-05869.herokuapp.com/booking/${user.email}`)
+        fetch(`https://wahi-travel-server.onrender.com/booking/${user.email}`)
             .then(res => res.json())
             .then(data => setBookings(data))
     }, [user.email]);
@@ -14,7 +14,7 @@ const MyBooking = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure want to cancel Booking?');
         if (proceed) {
-            fetch(`https://infinite-savannah-05869.herokuapp.com/cancelBooking/${id}`, {
+            fetch(`https://wahi-travel-server.onrender.com/cancelBooking/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())

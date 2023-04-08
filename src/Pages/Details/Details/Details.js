@@ -12,13 +12,13 @@ const Details = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { user } = useAuth();
     useEffect(() => {
-        fetch(`https://infinite-savannah-05869.herokuapp.com/services/${serviceId}`)
+        fetch(`https://wahi-travel-server.onrender.com/services/${serviceId}`)
             .then(res => res.json())
             .then(data => setPlace(data))
     }, [place]);
     const onSubmit = data => {
         data.status = "Pending";
-        fetch('https://infinite-savannah-05869.herokuapp.com/booking', {
+        fetch('https://wahi-travel-server.onrender.com/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
